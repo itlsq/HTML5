@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.jSelectDate.js"></script>
+<title>变色demo</title>
+<script type="text/javascript">
+	$(function(){
+		$("input.date").jSelectDate({
+			css:"date",
+			yearBeign: 1995,
+			disabled : false,
+			showLabel : false
+		});
+	})
+</script>
+</head>
+
+<body>
+	<input type="text"  class="date" value="2007" /> 至 <input type="text"  class="date" value="2018" />
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<title>变色demo</title>
+<script type="text/javascript">
+
+    var beginTime = 0；//执行onbeforeunload的开始时间
+    var differTime = 0;//时间差
+    window.onunload = function (){
+        differTime = new Date().getTime() - beginTime;
+        if(differTime <= 5) {
+		 	console.log("浏览器关闭")
+			 $.ajax({
+		        type: "POST",
+		        url:url,
+		        dataType: "JSON",
+		        cache: false,
+		        success: function(msg){
+		        	
+		        	},
+		        error:function(err){
+		        	console.log(err)
+		        }
+			 })
+		}else{
+			console.log("浏览器刷新")
+		}
+            
+    }
+    window.onbeforeunload = function (){
+       beginTime = new Date().getTime();
+    };
+</script>
+</head>
+
+<body>
+  <div class="changeBlue">哈哈哈哈哈</div>
+</body>
+</html>
+ 
